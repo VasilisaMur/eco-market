@@ -1,0 +1,33 @@
+<header th:fragment="header0" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="logo">
+    <a th:href="@{/}"><img src="img/logo.png" alt="logo" width="100px" height="100px"></a>
+    </div>
+    <nav class="menu">
+        <!--        <a th:href="@{/}">Каталог</a>-->
+        <!--        <a th:href="@{/basket}">Корзина</a>-->
+        <ul>
+        <li><form th:action="@{/}">
+            <input type="submit" value="Каталог"/>
+        </form></li>
+        <li><form th:action="@{/basket}">
+            <input type="submit" value="Корзина"/>
+        </form></li>
+        </ul>
+    </nav>
+    <div class="tel">
+        <form th:if="(${authority}=='[ADMIN]')" th:action="@{/add}">
+            <input type="submit" value="Добавить товар"/>
+        </form>
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Выйти"/>
+        </form>
+    </div>
+</header>
+
+<header th:fragment="header1">
+    <a href="index.html"><img src="/img/logo.png" alt="logo" width="100px" height="100px"></a>
+    <div class="user_header">
+        <a href="user.html"><img src="https://it-tehnik.ru/wp-content/uploads/female.png" width="60px" height="60px">
+            Имя пользователя</a>
+    </div>
+</header>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"ЭкоМаркет"</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!--    <link rel="stylesheet" href="elib\src\main\resources\static\style.css">-->
+    <link th:href="@{css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:insert="blocks/general.html :: header0">
+</div>
+
+
+
+<!--<div>-->
+<!--    <form th:action="@{/logout}" method="post">-->
+<!--        <input type="submit" value="Разлогиниться"/>-->
+<!--    </form>-->
+<!--</div>-->
+
+<!--<a th:href="@{/user}">Список пользователей (ADMIN only)</a><br>-->
+
+<!--<a th:href="@{/user/profile}">Профиль</a>-->
+
+<!--<a th:if="(${authority}=='[ADMIN]')" th:href="@{/add}">Добавить книгу (ADMIN only)</a>-->
+
+<!--<form th:if="(${authority}=='[ADMIN]')" th:action="@{/add}">-->
+<!--    <input type="submit" value="Добавить вещь"/>-->
+<!--</form>-->
+
+<!--<p th:text="${authority}"/>-->
+<!--<p th:if="(${authority}=='[ADMIN]')" th:text="${authority}"/>-->
+<div id="category_names">
+    <ul id = "nav">
+        <li>
+            <a th:href="@{/}" >Все варианты</a>
+            <ul>
+                <li th:each="category1 : ${category}"><a th:href="@{/(categoryId=${category1.getId()})}" th:text="${category1.getName()}" >TEXT</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+
+<div class="item_container">
+    <div th:each="el : ${Item}" class="product-item">
+        <img th:src="${el.coverLink}" onerror="this.src='img/no-cover.gif'" height="300px" width="200px">
+        <div class="product-list">
+        <h3 th:text="${el.itemName}"/>
+        <!--        <p th:text="${el.id}"/>-->
+        <span class="price" th:text="'₽ '+${el.price}"/>
+            <form th:method="POST" th:action="@{/page/{id}(id=${el.id})}">
+        <button type="submit">Добавить в корзину</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

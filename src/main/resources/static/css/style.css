@@ -1,0 +1,227 @@
+
+/*header1 {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+
+    border: 1px solid;
+    border-color: rgb(213, 218, 222);
+    margin-top: -10px;
+    margin-left: -10px;
+    margin-right: -10px;
+
+    box-shadow: 0px 0px 13px 6px rgba(34, 60, 80, 0.23);
+    /* position: fixed; */
+    /* width: 100%; */
+    /* z-index: 100; */
+ /*   background-color: rgba(255, 250, 230, 0.799); */
+    /* background: linear-gradient(to right bottom, #ffecd266, #fcb69f54);
+
+}*/
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+   .menu {
+       flex-grow: 1;
+     }
+
+     .menu ul {
+       display: flex;
+       flex-flow: row nowrap;
+       margin: 2px 0 0;
+       padding: 0;
+       font-size: 16px;
+       line-height: 18px;
+       list-style: none;
+     }
+
+     .menu li {
+       margin-right: 20px;
+     }
+
+     .menu li:last-child {
+       margin-right: 0;
+     }
+
+     .menu a,
+     .menu .active {
+       display: block;
+       padding: 8px 10px;
+       text-transform: uppercase;
+       letter-spacing: .27em;
+     }
+
+     .menu a {
+       color: #000;
+       text-decoration: none;
+     }
+
+     .menu .active {
+       color: #fff;
+       background-color: #ff3d00;
+       border-radius: 8px;
+     }
+
+     .tel {
+       font-size: 20px;
+       line-height: 24px;
+     }
+
+     .tel a {
+       color: #000;
+       text-decoration: none;
+     }
+
+   * {
+      box-sizing: border-box;
+}
+.product-item {
+   width: 300px;
+   text-align: center;
+   margin: 20 auto;
+   border-bottom: 2px solid #F5F5F5;
+   background: white;
+   font-family: "Open Sans";
+   transition: .3s ease-in;
+}
+.product-item:hover {
+   border-bottom: 2px solid green;
+}
+.product-item img {
+   display: block;
+   width: 100%;
+}
+.product-list {
+   background: light-green;
+   padding: 20px 30px;
+}
+.product-list h3 {
+   font-size: 18px;
+   font-weight: 400;
+   color: #444444;
+   margin: 0 0 10px 0;
+}
+.price {
+   font-size: 20px;
+   color: green;
+   display: block;
+   margin-bottom: 12px;
+}
+input[type=button], input[type=submit]{
+     display: inline-block;
+     text-decoration: none;
+     padding: 1em;
+     outline: none;
+     border-radius: 1px;
+}
+input[type=button], input[type=submit]:hover{
+   background-image:
+      radial-gradient(1px 45% at 0% 50%, rgba(0,0,0,.6), transparent),
+      radial-gradient(1px 45% at 100% 50%, rgba(0,0,0,.6), transparent);
+}
+input[type=button], input[type=submit]:active{
+   background-image:
+      radial-gradient(45% 45% at 50% 100%, rgba(255,255,255,.9), rgba(255,255,255,0)),
+      linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.3));
+     box-shadow:
+      inset rgba(162,95,42,.4) 0 0 0 1px,
+      inset rgba(255,255,255,.9) 0 0 1px 3px;
+}
+.product-item:hover .button {
+   background: #fc5a5a;
+}
+
+/*konec vmeshat*/
+
+form {
+    display: inline;
+}
+
+.item_container {
+    padding: 40px 0px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+		#nav{
+			float:left;
+			width:500px;
+			list-style:none;
+			font-weight:bold;
+			margin-bottom:10px;
+		}
+		#nav li{
+			float:left;
+			margin-right:0px;
+			position:relative;
+			display:block;
+		}
+		#nav li a{
+			display:block;
+			padding:5px;
+			color:#fff;
+			background:#333;
+			text-decoration:none;
+			text-shadow:1px 1px 1px rgba(0,0,0,0.75); /* Тень для визуальной приподнятости текста. */
+			-moz-border-radius:2px;
+			-webkit-border-radius:2px;
+			border-radius:2px;
+		}
+		#nav li a:hover{
+			color:#fff;
+			background:#6b0c36;
+			background:rgba(107,12,54,0.75); /* Заставляю выглядеть полупрозрачным. */
+			text-decoration:underline;
+		}
+		/*--- ВЫПАДАЮЩИЕ ПУНКТЫ ---*/
+		#nav ul{
+			list-style:none;
+			position:absolute;
+			left:-9999px; /* Убираю ненужно за пределы экрана (данный метод лучше, чем display:none; т.к. некоторые программы для чтения с экрана игнорирую это свойство). */
+			opacity:0; /* При помощи прозрачности, скрываем <ul>. */
+			-webkit-transition:0.25s linear opacity; /* Делаем так, чтобы Webkit плавно показывал нам всплывающие элементы выпадающего списка при наведении мышки. */
+		}
+		#nav ul li{
+			padding-top:1px; /* Здесь я задаю отступ между элементами li. Это необходимо для разделения пунктов меню, его не было в предыдущей части статьи (просто забыл).  */
+			float:none;
+			background:url(dot.gif);
+		}
+		#nav ul a{
+			white-space:nowrap; /* Запрещаю перенос строк текста на новую строку, чтобы создавался многострочный выпадающий элемент списка. */
+			display:block;
+		}
+		#nav li:hover ul{ /* Создаю выпадающий пункт, который появится при наведении курсора. */
+			left:0; /* Возвращаю его обратно на экран пользователя, — когда нужно. */
+			opacity:1; /* Убираю прозрачность. */
+		}
+		#nav li:hover a{ /* В этом стиле я устанавливаю свойства для элементов верхнего уровня, — в то время, когда показывается выпадающий список. */
+			background:#6b0c36;
+			background:rgba(107,12,54,0.75); /* Длеаю полупрозрачным. */
+			text-decoration:underline;
+		}
+		#nav li:hover ul a{ /* Поменял некоторые стили первого уровня при появлении выпадающего пункта. */
+			text-decoration:none;
+			-webkit-transition:-webkit-transform 0.075s linear;
+		}
+		#nav li:hover ul li a:hover{ /* Здесь я задаю стили для конкретных выпадающих пунктов, при наведении на них курсора — чтобы они отличались от тех элементов, куда курсор не попадает. */
+			background:#333;
+			background:rgba(51,51,51,0.75); /* Делаю полупрозрачным. */
+			text-decoration:underline;
+			-moz-transform:scale(1.05);
+			-webkit-transform:scale(1.05);
+		}
+

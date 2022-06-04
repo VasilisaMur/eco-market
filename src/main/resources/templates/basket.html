@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+    <link th:href="@{css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div th:insert="blocks/general.html :: header0">
+</div>
+<p class="basketlist">ВАШИ ПОКУПКИ:</p>
+<div class="basket_container">
+    <div th:each="purchase : ${basket}" class="basket_card">
+        <div class="basket_buttons">
+            <form th:method="POST" th:action="@{/basketDeletePurchase}">
+                <button name="delButton" th:value="${purchase.getId}">X</button>
+            </form>
+            <form th:method="POST" th:action="@{/basketIncrPurchase}">
+                <button name="incrButton" th:value="${purchase.getId}">+</button>
+            </form>
+            <form th:method="POST" th:action="@{/basketDecrPurchase}">
+                <button name="decrButton" th:value="${purchase.getId}">-</button>
+            </form>
+        </div>
+        <img th:src="${ItemService.getItemById(purchase.getItemId()).getCoverLink()}" onerror="this.src='img/no-cover.gif'" height="300px" width="200px">
+        <p th:text="${ItemService.getItemById(purchase.getItemId()).getItemName()}"/>
+        <p th:text="'Количество: ' + ${purchase.getItemCount()}"/>
+        <!--        <form th:method="POST" th:action="@{/basketDeletePurchase}">-->
+        <!--            <button name="delButton" th:value="${purchase.getId}">X</button>-->
+        <!--        </form>-->
+        <!--        <form th:method="POST" th:action="@{/basketIncrPurchase}">-->
+        <!--            <button name="incrButton" th:value="${purchase.getId}">+</button>-->
+        <!--        </form>-->
+        <!--        <form th:method="POST" th:action="@{/basketDecrPurchase}">-->
+        <!--            <button name="decrButton" th:value="${purchase.getId}">-</button>-->
+        <!--        </form>-->
+    </div>
+    <p th:text="'СУММА ЗАКАЗА: ' + ${basketPrice} + 'р'" class="basketlist"></p>
+    <CENTER><input type="submit" value="Оформить заказ"/></CENTER>
+</div>
+</body>
+</html>
