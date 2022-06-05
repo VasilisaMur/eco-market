@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Добавление товара</title>
+    <link th:href="@{css/style.css}" rel="stylesheet" />
 </head>
 <body>
 <form th:action="@{/}">
     <input type="submit" value="Вернуться к каталогу"/>
 </form><br>
+<div class="add">
 <form th:action="@{/add}" method="post">
-    <input type="text" name="item_name" placeholder="Название"><br><br>
-    <input type="text" name="item_desc" placeholder="Описание"><br><br>
-    <input type="text" name="cover_link" placeholder="Ссылка на картинку"><br><br>
-    <input type="number" name="price" placeholder="Цена"><br><br>
-    <input type="number" name="category_id" placeholder="Номер типа"><br><br>
-    <!--    <input type="text" name="is_read" value="true" placeholder="Прочитана ли"><br><br>-->
-    <!--    <input type="text" name="shop_link" placeholder="Ссылка на магазин"><br><br>-->
-    <!--    <textarea name="full_text" placeholder="Текст книги"></textarea><br><br>-->
+    <p>Название</p>
+    <input type="text" name="item_name" placeholder=""><br><br>
+    <p>Описание</p>
+    <input type="text" name="item_desc" placeholder=""><br><br>
+    <p>Ссылка на картинку</p>
+    <input type="text" name="cover_link" placeholder=""><br><br>
+    <p>Цена</p>
+    <input type="number" name="price" placeholder=""><br><br>
+    <p>Номер категории</p>
+    <input type="number" name="category_id" placeholder=""><br><br>
 
     <button type="submit">Сохранить</button>
 </form>
+</div>
 
 </body>
 </html>

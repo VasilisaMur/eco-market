@@ -17,35 +17,29 @@
 <div th:if="${param.logout}">
     You have been logged out.
 </div>
-<!--        <form th:action="@{/registration}" method="post">-->
-<!--            <div><label> User Name : <input type="text" name="username"/> </label></div>-->
-<!--            <div><label> Password: <input type="password" name="password"/> </label></div>-->
-<!--            <div><input type="submit" value="Sign In"/></div>-->
-<!--        </form>-->
+
 
 <form th:action="@{/registration}" method="post">
     <div class="registration_card">
-        <h2 id="regtext">Форма регистрации</h2>
         <div>
-            <!--                    <label for="name">Имя пользователя</label>-->
-            <label> User Name : <input type="text" name="username" required placeholder="Введите имя пользователя..."/> </label>
-            <!--                    <input type="text" name="username" required placeholder="Введите имя пользователя...">-->
+            <p>Логин:</p>
+            <input type="text" name="username" required placeholder=""/>
         </div>
         <br>
         <br>
         <div>
-            <div><label> Password: <input type="password" name="password" required placeholder="Введите пароль..."/> </label></div>
-            <!--                    <input type="text" name="password" required placeholder="Введите пароль...">-->
+            <p>Пароль:</p>
+            <input type="password" name="password" required placeholder=""/>
         </div>
         <br>
         <br>
-        <input type="submit" value="Войти"/>
+        <input type="submit" value="Создать"/>
 
     </div>
     <br>
 </form>
 <CENTER><form th:action="@{/login}">
-    <input type="submit" value="Аккаунт уже существует?"/>
+    <input type="submit" value="Авторизация"/>
 </form></CENTER>
 </body>
 </html>

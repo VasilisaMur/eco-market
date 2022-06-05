@@ -11,11 +11,7 @@ public interface ItemRepo extends CrudRepository<Item, Long> {
 
     List <Item> findAll();
 
-
     Item findById(int id);
-
-//    @Override
-//    Optional findById(int id);
 
     Long deleteById(int id);
 }

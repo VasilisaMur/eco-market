@@ -72,7 +72,6 @@ public class UserController {
     @GetMapping("profile")
     public String getProfile(@AuthenticationPrincipal User user, Model model) {
         model.addAttribute("username", user.getUsername());
-//        model.addAttribute("books", user.getFavorites());
 
         return "profile";
     }

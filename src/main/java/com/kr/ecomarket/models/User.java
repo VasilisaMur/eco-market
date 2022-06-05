@@ -18,8 +18,6 @@ public class User implements UserDetails {
     public User() {
     }
 
-//    @ManyToMany(mappedBy = "subscribers", fetch = Fetchcategory.EAGER, cascade = Cascadecategory.ALL)
-//    private Set<Item> favorites = new HashSet<>();
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))

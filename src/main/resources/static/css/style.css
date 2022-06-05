@@ -25,6 +25,7 @@ header {
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
+    font-family:arial;
   }
 
   .logo {
@@ -134,7 +135,7 @@ input[type=button], input[type=submit]:hover{
    background: #fc5a5a;
 }
 
-/*konec vmeshat*/
+
 
 form {
     display: inline;
@@ -228,6 +229,7 @@ form {
   border-radius: 6px;
   display: flex;
   flex-direction: column;
+  font-family:arial;
 }
 
 .basket_card {
@@ -238,8 +240,8 @@ form {
 }
 
 .basket_card p {
-    font-weight: bold;
     margin: 10px;
+    font-family:arial;
     /* padding: 0px; */
     /* margin: 0px; */
 }
@@ -262,10 +264,6 @@ form {
   margin-right: 60px;
   display: inline-block;
   Cursor: pointer;
-  width: 20px;
-  height: 20px;
-  background: #D9D9D9;
-  border-radius: 60px;
   /*background: url("delete-icn.svg") no-repeat center;*/
 }
 .minus-btn {
@@ -288,4 +286,34 @@ form {
   font-size: 16px;
   color: black;
   font-weight: 300;
+}
+
+.registration_card {
+      width: 350px;
+      height: 300px;
+      margin: 80px auto;
+      background: #9AE2C8;
+      box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+       align-items: center;
+       font-family:arial;
+
+}
+.add{
+      width: 350px;
+      height: 500px;
+      margin: 80px auto;
+      background: #9AE2C8;
+      box-shadow: 1px 2px 3px 0px rgba(0,0,0,0.10);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 10px;
+       align-items: center;
+       font-family:arial;
 }

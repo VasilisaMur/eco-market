@@ -143,15 +143,12 @@ public class MainController {
             newBasket.setItemId(itemId);
             newBasket.setItemCount(1);
             basketService.savePurchase(newBasket);
-//                return "redirect:/page/" + itemId;
             return "redirect:/";
         }
         else{
             basket.setItemCount(basket.getItemCount() + 1);
             basketService.savePurchase(basket);
-//                return "redirect:/page/" + itemId;
             return "redirect:/";
-//            }
         }
     }
 }
